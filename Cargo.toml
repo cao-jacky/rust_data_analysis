@@ -1,18 +1,18 @@
-[profile.dev]
-opt-level = 3
-lto = true
-codegen-units = 1
-debug = false
+[package]
+name = "rust_data_analysis"
+version = "0.1.0"
+edition = "2024"
 
 [dependencies]
-blas-src = "0.9.0"
-chrono = "0.4.31"
-either = "1.9.0"
-evcxr = "0.17.0"
-ndarray = "0.15.6"
-ndarray-linalg = "0.16.0"
-ndarray-rand = "0.14.0"
-plotters = "0.3.6"
-polars = "0.41.3"
-smartcore = "0.3.2"
-statrs = "0.16.0"
+# blas-src = "0.9.0"
+# chrono = "0.4.31"
+csv = "1"
+# either = "1.9.0"
+# evcxr = "0.17.0"
+# ndarray = "0.15.6"
+# ndarray-linalg = "0.16.0"
+# ndarray-rand = "0.14.0"
+# plotters = "0.3.6"
+polars = { version = "0.42.0", features = ["lazy", "csv"]}
+# smartcore = "0.3.2"
+# statrs = "0.16.0"
