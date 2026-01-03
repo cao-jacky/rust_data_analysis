@@ -7,7 +7,6 @@ fn main() -> Result<(), Box<dyn Error>> {
         .with_parse_options(CsvParseOptions::default().with_try_parse_dates(true))
         .try_into_reader_with_file_path(Some("data/Iris.csv".into()))?
         .finish()?;
-
     println!("{df_csv}");
 
     let result = df_csv
@@ -18,20 +17,5 @@ fn main() -> Result<(), Box<dyn Error>> {
         ])
         .collect()?;
     println!("{result}");
-
-    // let df = CsvReader::from_path("../data/Iris.csv")?
-    //     .has_header(true)
-    //     .infer_schema(None)
-    //     .finish()?;
-
-    // let stats = df
-    //     .lazy()
-    //     .select([
-    //         cols("*").mean().alias("mean"),
-    //         cols("*").std(1).alias("stddev"),
-    //     ])
-    //     .collect()?;
-
-    // println!("{stats}");
     Ok(())
 }
